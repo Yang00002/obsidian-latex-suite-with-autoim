@@ -25,6 +25,10 @@ interface LatexSuiteBasicSettings {
 	taboutEnabled: boolean;
 	autoEnlargeBrackets: boolean;
 	wordDelimiters: string;
+
+
+	autoIMEEnabled: boolean;
+	autoIMEPath: string;
 }
 
 /**
@@ -83,6 +87,9 @@ export const DEFAULT_SETTINGS: LatexSuitePluginSettings = {
 	matrixShortcutsEnvNames: "pmatrix, cases, align, bmatrix, Bmatrix, vmatrix, Vmatrix, array, matrix",
 	autoEnlargeBracketsTriggers: "sum, int, frac, prod, bigcup, bigcap",
 	forceMathLanguages: "math",
+
+	autoIMEEnabled: true,
+	autoIMEPath: "C:\\Users\\Public\\Downloads\\ime.exe"
 }
 
 export function processLatexSuiteSettings(snippets: Snippet[], settings: LatexSuitePluginSettings):LatexSuiteCMSettings {

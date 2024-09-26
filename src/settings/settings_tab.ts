@@ -48,6 +48,7 @@ export class LatexSuiteSettingTab extends PluginSettingTab {
 		this.displayTaboutSettings();
 		this.displayAutoEnlargeBracketsSettings();
 		this.displayAdvancedSnippetSettings();
+		this.displayautoIMESettings();
 	}
 
 	private displaySnippetSettings() {
@@ -468,6 +469,34 @@ export class LatexSuiteSettingTab extends PluginSettingTab {
 				.onChange(async (value) => {
 					this.plugin.settings.forceMathLanguages = value;
 
+					await this.plugin.saveSettings();
+				}));
+	}
+
+	private displayautoIMESettings() {
+		const containerEl = this.containerEl;
+		this.addHeading(containerEl, "Auto IME Settings", "languages");
+
+		new Setting(containerEl)
+			.setName("Enabled")
+			.setDesc("Whether to automatically switch IME.")
+			.addToggle(toggle => toggle
+				.setValue(this.plugin.settings.autoIMEEnabled)
+				.onChange(async (value) => {
+					this.plugin.settings.autoIMEEnabled = value;
+					await this.plugin.saveSettings();
+				}));
+		new Setting(containerEl)
+			.setName("Path")
+			.setDesc("Path of exe file you have downloaded in github.")
+			.addText(text => text
+				.setPlaceholder(DEFAULT_SETTINGS.autoIMEPath)
+				.setValue(this.plugin.settings.autoIMEPath)
+				.onChange(async (value) => {
+					if(value.length != 0)
+						this.plugin.settings.autoIMEPath = value;
+					else
+						this.plugin.settings.autoIMEPath = "C:\\Users\\Public\\Downloads\\ime.exe";
 					await this.plugin.saveSettings();
 				}));
 	}
