@@ -1,6 +1,6 @@
 # Obsidian Latex Suite with AutoIM <img src="https://img.shields.io/github/manifest-json/v/Yang00002/obsidian-latex-suite-with-autoim">
 
-**[中文文档](./README_cn.md)**
+**[English File](./README.md)**
 
 **This plugin is a fork of [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/).**
 
@@ -65,8 +65,6 @@ There are several ways to using Windows api in Typescript:
 
 - package `ffi-napi`, I never success on installing it.
 
-- `WASI` in `WASM`, don't work for unkown reason.
-
 - pacakge `koffi`, it can call functions in dll in javascript. 
 
 - nodejs `n-api`, it can also call functions in dll in javascript, faster than `koffi` but need more C skills.
@@ -75,7 +73,7 @@ The above two strategies work in nodejs. Saddly, not in Obsidian Plugin. I have 
 
 - run `exe`, in this case is the `im.exe`
 
-This is the slowest method, but it work. See [autoIM Extension File](./src/editor_extensions/autoim.ts) for detail.
+This is the slowest method, but it work. See [autoIM Extension File](https://github.com/Yang00002/obsidian-latex-suite-with-autoim/blob/main/src/editor_extensions/autoim.ts) for detail.
 
 ### Change the default language in text environment
 
