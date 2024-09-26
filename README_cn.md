@@ -17,7 +17,7 @@ AutoIM 允许你在数学环境下自动切换到英文输入法, 在其他环�
 
 如果你要用这个插件, 有两种方案:
 
-- 从源码编译, 方法见 [Obsidian Developer Decument](https://docs.obsidian.md/Plugins/Getting+started/Build+a+plugin).
+- 从源码编译, 方法见 [Obsidian Developer Decument](https://docs.obsidian.md/Plugins/Getting+started/Build+a+plugin). 需要从 release 下载 `im.exe`
 
 
 - 下载插件 [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) 并替换它的文件.

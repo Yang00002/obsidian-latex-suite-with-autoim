@@ -19,7 +19,7 @@ For personally reason, this plugin would never be submitted to the  community.
 
 If you want to use it, there are two choices:
 
-- compile from source code, see [Build a plugin](https://docs.obsidian.md/Plugins/Getting+started/Build+a+plugin) for detail.
+- compile from source code, see [Build a plugin](https://docs.obsidian.md/Plugins/Getting+started/Build+a+plugin) for detail. Still need `im.exe` from release.
 
 - download [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) and replace its file.
 
