@@ -39,11 +39,11 @@ Then you can get release zip from this repository. It contain `main.js` and `im.
 
 - For `im.exe`, put it at wherever you want, but remember its path.
 
-Now you can enter you obsidian, before use autoIM, you need to edit the settings of Latex-Suite, setting the Auto IME Path to the path of `im.exe` and reenable Auto IME.
+Now you can enter you obsidian, before use autoIM, you need to edit the settings of Latex-Suite, setting the Auto IM Path to the path of `im.exe` and reenable Auto IM.
 
 You can find settings in 
 
-`Obsidian > Settings > Latex Suite > Auto IME Settings`
+`Obsidian > Settings > Latex Suite > Auto IM Settings`
 
 You need to replace `main.js` and set path in every valuts you wanted to use autoIM. But they can share `im.exe`.
 

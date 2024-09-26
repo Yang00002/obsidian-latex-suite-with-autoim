@@ -42,7 +42,7 @@ AutoIM 允许你在数学环境下自动切换到英文输入法, 在其他环�
 
 设置在
 
-`Obsidian > 设置 > Latex Suite > Auto IME Settings`
+`Obsidian > 设置 > Latex Suite > Auto IM Settings`
 
 每创建一个仓库, 都要替换一次 `main.js`, 也要设置一次路径. 但是不同仓库的 `im.exe` 可以共享.
 

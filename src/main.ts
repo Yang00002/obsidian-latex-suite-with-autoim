@@ -14,7 +14,7 @@ import { snippetExtensions } from "./snippets/codemirror/extensions";
 import { concealPlugin } from "./editor_extensions/conceal";
 import { colorPairedBracketsPluginLowestPrec, highlightCursorBracketsPlugin } from "./editor_extensions/highlight_brackets";
 import { cursorTooltipBaseTheme, cursorTooltipField } from "./editor_extensions/math_tooltip";
-import { autoIMEPlugin } from "./editor_extensions/autoime"
+import { autoIMPlugin } from "./editor_extensions/autoim"
 
 export default class LatexSuitePlugin extends Plugin {
 	settings: LatexSuitePluginSettings;
@@ -181,8 +181,8 @@ export default class LatexSuitePlugin extends Plugin {
 				cursorTooltipBaseTheme,
 				tooltips({ position: "absolute" }),
 			]);
-		if (this.CMSettings.autoIMEEnabled)
-			this.editorExtensions.push(autoIMEPlugin.extension);
+		if (this.CMSettings.autoIMEnabled)
+			this.editorExtensions.push(autoIMPlugin.extension);
 	}
 
 	showSnippetsLoadedNotice(nSnippets: number, nSnippetVariables: number, becauseFileLocationUpdated: boolean, becauseFileUpdated: boolean) {

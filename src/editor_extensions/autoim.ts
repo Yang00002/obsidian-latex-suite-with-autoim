@@ -13,19 +13,19 @@ function getstate(view: EditorView) :boolean
 	return false;
 }
 
-export const autoIMEPlugin = ViewPlugin.fromClass(class {
+export const autoIMPlugin = ViewPlugin.fromClass(class {
 	isinmath : boolean;
-	cpath : string = "C:\\Users\\Public\\Downloads\\ime.exe";
-	epath : string = "C:\\Users\\Public\\Downloads\\ime.exe 1";
+	cpath : string = "C:\\Users\\Public\\Downloads\\im.exe";
+	epath : string = "C:\\Users\\Public\\Downloads\\im.exe 1";
 	constructor(view: EditorView) {
 		const settings = getLatexSuiteConfig(view);
-		if(settings.autoIMEPath.length != 0)
+		if(settings.autoIMPath.length != 0)
 		{
-			this.cpath = settings.autoIMEPath;
-			this.epath = settings.autoIMEPath + " 1";
+			this.cpath = settings.autoIMPath;
+			this.epath = settings.autoIMPath + " 1";
 		}
 		this.isinmath = getstate(view);
-		this.switchime();
+		this.switchim();
 	}
 
 	update(update: ViewUpdate) {
@@ -35,28 +35,28 @@ export const autoIMEPlugin = ViewPlugin.fromClass(class {
 				if(this.isinmath != s2)
 				{
 					this.isinmath = s2;
-					this.switchime();
+					this.switchim();
 				}
 			}
 	}
 
-	private switchime():void{
+	private switchim():void{
 		if(this.isinmath)
 			{
-				this.eime();
+				this.eim();
 			}
 			else
 			{
-				this.cime();
+				this.cim();
 			}
 	}
 
-	private async cime() : Promise<string>{
+	private async cim() : Promise<string>{
 		const output = await promisify(exec)(this.cpath);
 		return output.stdout;
 	}
 	
-	private async eime() : Promise<string>{
+	private async eim() : Promise<string>{
 		const output = await promisify(exec)(this.epath);
 		return output.stdout;
 	}

@@ -27,8 +27,8 @@ interface LatexSuiteBasicSettings {
 	wordDelimiters: string;
 
 
-	autoIMEEnabled: boolean;
-	autoIMEPath: string;
+	autoIMEnabled: boolean;
+	autoIMPath: string;
 }
 
 /**
@@ -88,8 +88,8 @@ export const DEFAULT_SETTINGS: LatexSuitePluginSettings = {
 	autoEnlargeBracketsTriggers: "sum, int, frac, prod, bigcup, bigcap",
 	forceMathLanguages: "math",
 
-	autoIMEEnabled: true,
-	autoIMEPath: "C:\\Users\\Public\\Downloads\\ime.exe"
+	autoIMEnabled: true,
+	autoIMPath: "C:\\Users\\Public\\Downloads\\ime.exe"
 }
 
 export function processLatexSuiteSettings(snippets: Snippet[], settings: LatexSuitePluginSettings):LatexSuiteCMSettings {
