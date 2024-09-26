@@ -82,3 +82,11 @@ This is the slowest method, but it work. See [autoIM Extension File](./src/edito
 In default, the language in text environment is Chinese. If you want to use another language, you just need to change `im.exe`.
 
 AutoIM run command `im.exe` when coming into text environment, and `im.exe 1` when coming into math environment. You can make a new `im.exe` and tell autoIM its path by settings.
+
+## Acknowledgement
+
+Thank for [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) for its environment and method of detecting mouse moving.
+
+Thank for [Auto Shift Input](https://github.com/3biubiu/auto-shift-input) for its method of switching the InputMethod.
+
+Thank for [Vim IM Switch](https://github.com/yuanotes/obsidian-vim-im-switch-plugin) for its method of running C program in Obsidian plungins.

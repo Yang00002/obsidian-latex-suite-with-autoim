@@ -2,81 +2,88 @@
 
 **[English File](./README.md)**
 
-**This plugin is a fork of [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/).**
+**本插件是 [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) 的一个 fork.**
 
-**This plugin only support Windows x86_64.**
-## Usage
+**本插件只支持 Windows x86_64.**
+## 用途
 
-This plugin is the same as [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/), except a new function autoIM.
+本插件功能与 [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) 相同, 除了 autoIM 功能.
 
-AutoIM allow you to change your InputMethod languague when you come in or out the math environment. Commonly, you should type an extra `Shift` to achieve it.
+AutoIM 允许你在数学环境下自动切换到英文输入法, 在其他环境自动切换到中文输入法. 正常情况下, 你需要多按一个 `Shift` 来达到这个效果.
 
-This is not for those whose first language is English.
+## 安装
 
-## Install
+因为个人原因, 本插件永远不会在社区插件市场上架.
 
-For personally reason, this plugin would never be submitted to the  community.
+如果你要用这个插件, 有两种方案:
 
-If you want to use it, there are two choices:
+- 从源码编译, 方法见 [Obsidian Developer Decument](https://docs.obsidian.md/Plugins/Getting+started/Build+a+plugin).
 
-- compile from source code, see [Build a plugin](https://docs.obsidian.md/Plugins/Getting+started/Build+a+plugin) for detail.
 
-- download [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) and replace its file.
+- 下载插件 [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) 并替换它的文件.
 
-### download [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) and replace its file
+### 下载 [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) 并替换它的文件
 
-You can download [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) from community 
+你可以从社区插件市场下载 [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/).
 
-`Obsidian > Settings > Community plugins > Browser`
+`Obsidian > 设置 > 第三方插件 > 社区插件市场`
 
-Once you downloaded it, you can see four files at latex-suite file
+下载之后, 在 latex-suite 的目录下可以看到 4 个文件
 
-`<vault directory>\.obsidian\plugins\obsidian-latex-suite`
+`<仓库目录>\.obsidian\plugins\obsidian-latex-suite`
 
-Then you can get release zip from this repository. It contain `main.js` and `im.exe`. 
+然后从该仓库下载 `release` 的 `zip` 文件(不是源码). 它应该包含 `main.js` 和 `im.exe`. 
 
-- For `main.js`, Replace `main.js` in latex-suite file with this version.
+- 对于 `main.js`, 把 latex-suite 目录下的 `main.js` 替换成这个版本.
 
-- For `im.exe`, put it at wherever you want, but remember its path.
+- 对于 `im.exe`, 随便放到一个地方, 把它的路径记下来.
 
-Now you can enter you obsidian, before use autoIM, you need to edit the settings of Latex-Suite, setting the Auto IME Path to the path of `im.exe` and reenable Auto IME.
+现在可以进入 obsidian, 然后需要更改一下 autoIM 的设置, 你需要首先进入 latex-suite 的设置, 拉到最下面. 然后把 `Path` 设置为刚才的 `im.exe` 路径, 重新点一下 `enable`, 把 autoIM 关掉再打开.
 
-You can find settings in 
+设置在
 
-`Obsidian > Settings > Latex Suite > Auto IME Settings`
+`Obsidian > 设置 > Latex Suite > Auto IME Settings`
 
-You need to replace `main.js` and set path in every valuts you wanted to use autoIM. But they can share `im.exe`.
+每创建一个仓库, 都要替换一次 `main.js`, 也要设置一次路径. 但是不同仓库的 `im.exe` 可以共享.
 
-## Advanced Topics
+## 其他话题
 
-### Why I implement autoIM in Latex-Suite instead of making a new plugin
+### 为什么在 latex-suite 实现 autoIM 而不是单独写一个插件
 
-I have no better idea about how to find the math environment efficienty.
+我找不到在 Obsidian 中更好的检测数学环境的高效方法了.
 
-I was trying to use the strategy of Latex-Suite but it act strange in my plugin. In fact I am not familiar with typescript, not to say codemirror.
+我之前试过按 latex-suite 的方法检测数学环境, 但在自己的插件中就是不好使. 而且我是个 typescript 新手, 对 typescript 和 codemirror 都不熟悉, 写这个插件仅仅是因为 Obsidian 没有.
 
-The need of autoIM only come from editing math equation. Integrate the function to Latex-Suite is convinient and simple, especially when Latex-Suite greately accelerated math writing.
+因为 autoIM 只在写数学公式时需要用到, 把它集成在 latex-suite 中是方便和自然的, 如果你想用 autoIM 但不想用 latex-suite, 那我推荐你使用 latex-suite(实在不想用可以自己写一个).
 
-### How to switch IM in an Obsidian Plugin
+### 在 Obsidian 插件中怎么切换输入法
 
-Obsidian Plugins are writing in typescript. Typescript cannot change IM itself. It depends on Windows api in C.
+Obsidian 插件是拿 typescript 写的. Typescript 不能自己替换输入法, 必须用 C 调用 Windows api.
 
-There are several ways to using Windows api in Typescript:
+有下面在 Typescript几种使用 Windows api 的方法
 
-- package `ffi-napi`, I never success on installing it.
+-  `ffi-napi` 包, 我配了一天都没配成功, 魔法都不好使
 
-- pacakge `koffi`, it can call functions in dll in javascript. 
+- `WASM` 中的 `WASI`, 不知道为什么有问题
 
-- nodejs `n-api`, it can also call functions in dll in javascript, faster than `koffi` but need more C skills.
+- `koffi` 包, `ffi-napi` 更好下载, 更快的版本,  可以让你在 `js` 中调用 dll
 
-The above two strategies work in nodejs. Saddly, not in Obsidian Plugin. I have no way handling `.node` addon by ESBuild.
+- nodejs 原生的 `n-api`, 也可以让你在 `js` 中调用 dll, 比 `koffi` 更快
 
-- run `exe`, in this case is the `im.exe`
+上面两个在 `typescript` 用 node 运行都能使, 但是 Obsidian 插件用 ESBuild 打包, 不知道用什么方式运行, 反正是不能处理生成的 `.node` 文件.
 
-This is the slowest method, but it work. See [autoIM Extension File](https://github.com/Yang00002/obsidian-latex-suite-with-autoim/blob/main/src/editor_extensions/autoim.ts) for detail.
+- 直接运行 `exe`, 就是这个插件中的 `im.exe`
 
-### Change the default language in text environment
+这是最慢的, 也是唯一跑通的. 代码见 [autoIM Extension File](https://github.com/Yang00002/obsidian-latex-suite-with-autoim/blob/main/src/editor_extensions/autoim.ts).
 
-In default, the language in text environment is Chinese. If you want to use another language, you just need to change `im.exe`.
+### autoIM 的 exe 接口
 
-AutoIM run command `im.exe` when coming into text environment, and `im.exe 1` when coming into math environment. You can make a new `im.exe` and tell autoIM its path by settings.
+autoIM 切换输入法是通过运行 `im.exe`. 当进入公式环境, 运行 `im.exe 1`, 当进入文本环境, 运行 `im.exe`. 所以如果想在别的平台使用这个插件, 可以自己打包一个 `im.exe`, 完成切换输入法的功能.
+
+## 致谢
+
+感谢 [Obsidian Latex Suite](https://github.com/artisticat1/obsidian-latex-suite/) 提供的环境和检测鼠标移动的方法.
+
+感谢 [Auto Shift Input](https://github.com/3biubiu/auto-shift-input) 提供的切换中英文输入法的方法.
+
+感谢 [Vim IM Switch](https://github.com/yuanotes/obsidian-vim-im-switch-plugin) 提供的在 Obsidian 插件运行 C 程序的方法.
